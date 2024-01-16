@@ -15,6 +15,7 @@ public class ControlJSON {
 
     private final String PathJson = "src/main/resources/Datos.json";
 
+    public ControlJSON(){};
     public ArrayList<Producto> LeerFichero() {
         try {
             // Intentamos abrir un InputStream para leer el archivo desde el classpath
