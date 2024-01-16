@@ -60,6 +60,32 @@ class ControJsonTest {
 
     }
 
+    @Test
+    public void testActualizarProducto() {
+        // Llama al método setUp para cargar datos de prueba y configurar comportamiento esperado
+
+        Producto producto = new Producto();
+
+        producto.setNombre("Prueba");
+        producto.setCategoria("Prueba");
+        producto.setPrecio("23");
+        producto.setEan13("12345");
+
+
+        //agregamos el mismo producto que vamos a eliminar mas adelante
+        api.agregarProducto(producto);
+
+        // Configura el comportamiento esperado del método eliminarProducto en el objeto mock
+        when(controlJSON.actualizarProductoEnFichero(producto)).thenReturn(1);
+
+        // Supongamos que tu API utiliza el controlJSON para guardar el producto
+        int resultado = api.actualizarProducto(producto);
+
+        // Verifica que el resultado sea el esperado
+        assertEquals(1, resultado);
+
+    }
+
 
 
 }
