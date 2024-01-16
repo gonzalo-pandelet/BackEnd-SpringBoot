@@ -1,9 +1,4 @@
 [ {
-  "nombre" : "solomillo",
-  "categoria" : "carne",
-  "precio" : "56",
-  "ean13" : "12432543"
-}, {
   "nombre" : "filete",
   "categoria" : "carne",
   "precio" : "11",
@@ -11,6 +6,26 @@
 }, {
   "nombre" : "langosta",
   "categoria" : "marisco",
-  "precio" : "102",
+  "precio" : "199",
   "ean13" : "12312341324"
+}, {
+  "nombre" : "Prueba",
+  "categoria" : "Prueba",
+  "precio" : "23",
+  "ean13" : "12345"
+}, {
+  "nombre" : "Prueba",
+  "categoria" : "Prueba",
+  "precio" : "1",
+  "ean13" : "12345"
+}, {
+  "nombre" : "Prueba",
+  "categoria" : "Prueba",
+  "precio" : "1",
+  "ean13" : "12345"
+}, {
+  "nombre" : "Prueba",
+  "categoria" : "Prueba",
+  "precio" : "23",
+  "ean13" : "12345"
 } ]

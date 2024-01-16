@@ -22,13 +22,14 @@ public class API {
 
     // AÑADIR PRODUCTOS
     @PostMapping("/Productos/Agregar")
-    public void agregarProducto(@RequestBody Producto productoNuevo) {
+    public short agregarProducto(@RequestBody Producto productoNuevo) {
         try {
             ControlJSON controlJSON = new ControlJSON();
             int resultado = controlJSON.GuardarFichero(productoNuevo);
 
             if (resultado == 1) {
                 System.out.println("Se ha agregado el producto correctamente");
+                return 1;
             } else {
                 System.out.println("Error al agregar el producto");
             }
@@ -37,16 +38,18 @@ public class API {
             e.printStackTrace();
             throw new RuntimeException("Error al agregar el producto: " + e.getMessage());
         }
+        return 0;
     }
     //FUNCION ELIMINAR
     @DeleteMapping("/Productos/Eliminar")
-    public void eliminarProducto(@RequestBody Producto productoEliminar) {
+    public short eliminarProducto(@RequestBody Producto productoEliminar) {
         try {
             ControlJSON controlJSON = new ControlJSON();
             int resultado = controlJSON.eliminarProducto(productoEliminar);
 
             if (resultado == 1) {
                 System.out.println("Se ha eliminado el producto correctamente");
+                return 1;
             } else {
                 System.out.println("Error al eliminar el producto");
             }
@@ -55,17 +58,19 @@ public class API {
             e.printStackTrace();
             throw new RuntimeException("Error al eliminar el producto: " + e.getMessage());
         }
+        return 0;
     }
 
     // FUNCION ACTUALIZAR
     @PutMapping("/Productos/Actualizar")
-    public void actualizarProducto(@RequestBody Producto productoActualizar) {
+    public int actualizarProducto(@RequestBody Producto productoActualizar) {
         try {
             ControlJSON controlJSON = new ControlJSON();
             int resultado = controlJSON.actualizarProductoEnFichero(productoActualizar);
 
             if (resultado == 1) {
                 System.out.println("Se ha actualizado el producto correctamente");
+                return 1;
             } else {
                 System.out.println("Error al actualizar el producto");
             }
@@ -74,6 +79,7 @@ public class API {
             e.printStackTrace();
             throw new RuntimeException("Error al actualizar el producto: " + e.getMessage());
         }
+        return 0;
     }
 
 }
